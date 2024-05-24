@@ -59,12 +59,12 @@ Which worker gets which tasks?
 
 See a running example with at least 3 concurrent process windows here:
 
-[RabbitMQ Admin]("RMQ_admin.png")
+![RabbitMQ Admin](RMQ_admin.png)
 
-[V1 Terminal]("v1_term.png")
+![V1 Terminal](v1_term.png)
 
-[V2 Terminal]("v2_term.png")
+![V2 Terminal](v2_term.png)
 
-[V3 Terminal]("v3_term.png")
+![V3 Terminal](v3_term.png)
 
 
