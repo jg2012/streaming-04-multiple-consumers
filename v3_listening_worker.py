@@ -1,23 +1,30 @@
 """
+This script listens for task messages on a specified RabbitMQ queue and processes each task.
+The process runs continuously, making it suitable for a work queue setup where multiple workers share the workload.
 
-Listens for task messages on the queue.
-This process runs continously. 
-
-Make as many listening workers as you need 
-(start this process in multiple terminals).
+You can start multiple instances of this script in different terminals to create as many listening workers as needed,
+enabling the distribution of tasks across several workers for parallel processing.
 
 Approach
----------
-Work Queues - one task producer / many workers sharing work.
-
+--------
+This implementation follows the Work Queues pattern where one task producer sends tasks to a queue and multiple workers
+consume tasks from the queue, sharing the workload.
 
 Terminal Reminders
 ------------------
+- Use Control+C to close a terminal and end a process.
+- Use the up arrow to retrieve the last command executed.
 
-- Use Control c to close a terminal and end a process.
+Functions:
+    listen_for_tasks() -> None:
+        Continuously listens for task messages on a named queue and processes them.
+    
+    callback(ch, method, properties, body) -> None:
+        Defines behavior on receiving a message, including simulating work and acknowledging the message.
 
-- Use the up arrow to get the last command executed.
-
+Usage:
+    Run this script directly to start listening for and processing messages from the RabbitMQ queue.
+    Ensure the RabbitMQ server is running before starting the script.
 """
 import pika
 import sys

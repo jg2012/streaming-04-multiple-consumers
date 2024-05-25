@@ -2,8 +2,25 @@
     This program sends a message to a queue on the RabbitMQ server.
     Make tasks harder/longer-running by adding dots at the end of the message.
 
-    Author: Denise Case
+Original Author: Denise Case
     Date: January 15, 2023
+
+    Functions:
+    offer_rabbitmq_admin_site() -> None:
+        Offers to open the RabbitMQ Admin website for monitoring.
+
+    send_message(host: str, queue_name: str, message: str) -> None:
+        Sends a message to the specified RabbitMQ queue.
+
+    read_tasks_from_csv(file_path: str) -> list[str]:
+        Reads tasks from a CSV file and returns them as a list of strings.
+
+    main() -> None:
+        Main entry point of the script. Reads tasks from the CSV file and sends them to the RabbitMQ queue.
+
+Usage:
+    Run this script directly to send messages to the RabbitMQ queue.
+    Ensure RabbitMQ server is running and the tasks.csv file is present in the 
 
 """
 import csv
