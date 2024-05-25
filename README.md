@@ -1,5 +1,7 @@
 # streaming-04-multiple-consumers
 
+Name: Jose Guzman 
+
 > Use RabbitMQ to distribute tasks to multiple workers
 
 One process will create task messages. Multiple worker processes will share the work. 
